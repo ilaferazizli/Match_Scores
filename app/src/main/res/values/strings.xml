@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Match Scores</string>
+    <string name="gem">Gem</string>
+    <string name="score">score</string>
+    <string name="football">Football</string>
+</resources>
