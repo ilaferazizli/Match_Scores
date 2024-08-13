@@ -3,4 +3,10 @@
     <string name="gem">Gem</string>
     <string name="score">score</string>
     <string name="football">Football</string>
+    <string name="world_cup_2022">World Cup 2022</string>
+    <string name="switzerland">Switzerland</string>
+    <string name="cameroon">Cameroon</string>
+    <string name="_1">1</string>
+    <string name="_0">0</string>
+    <string name="ft">FT</string>
 </resources>
