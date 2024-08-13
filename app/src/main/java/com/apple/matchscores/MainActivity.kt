@@ -30,7 +30,9 @@ import kotlinx.coroutines.withContext
 //                    binding.text.text = e.message
                 }
             }
+println("helo")
 
+            //dncoinqwodnwfon
         }
     }
 }
