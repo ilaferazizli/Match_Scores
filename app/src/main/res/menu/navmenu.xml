@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="score"
+    <item android:id="@+id/score"
         android:title="Score"
         android:orderInCategory="1"/>
-    <item android:id="videos"
+    <item android:id="@+id/videos"
         android:title="Videos"
         android:orderInCategory="2"/>
-    <item android:id="news"
+    <item android:id="@+id/news"
         android:title="News"
         android:orderInCategory="3"/>
-    <item android:id="favorites"
+    <item android:id="@+id/favorites"
         android:title="Favorites"
         android:orderInCategory="4"/>
 
