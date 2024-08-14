@@ -14,6 +14,7 @@ data class Data(
     val placeholder: Boolean,
     val result_info: String,
     val round_id: Int,
+    val scores: List<Score>,
     val season_id: Int,
     val sport_id: Int,
     val stage_id: Int,

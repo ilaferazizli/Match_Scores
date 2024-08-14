@@ -1,10 +1,14 @@
  package com.apple.matchscores
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.apple.matchscores.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -18,21 +22,23 @@ import kotlinx.coroutines.withContext
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
         CoroutineScope(Dispatchers.IO).launch {
             try {
                 val response = Api.retrofitService.fetchData()
-                withContext(Dispatchers.Main){
-//                    binding.text.text = response.data[0].name
+                withContext(Dispatchers.Main) {
+                    binding.loading.visibility = GONE
+                    binding.gamenamerecycler.layoutManager = layoutManager
+                    binding.gamenamerecycler.adapter = GameNameAdapter(response.data)
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    binding.loading.visibility = GONE
+                    binding.errorMessage.text = e.message
+                    binding.errorMessage.visibility = VISIBLE
                 }
             }
-            catch (e: Exception){
-                withContext(Dispatchers.Main){
-//                    binding.text.text = e.message
-                }
-            }
-println("helo")
-
-            //dncoinqwodnwfon
         }
     }
 }
