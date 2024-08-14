@@ -59,78 +59,90 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gamerecycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.15"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dayrecycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55"/>
+        app:layout_constraintTop_toBottomOf="@+id/gamerecycler" />
+
     <Button
+        android:id="@+id/button"
         android:layout_width="350dp"
         android:layout_height="60dp"
-        android:text="@string/world_cup_2022"
-       android:textSize="18sp"
+        android:text="@string/league"
         android:textColor="@color/black"
-        android:drawableEnd="@drawable/baseline_chevron_right_24"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/dayrecycler" />
     <ImageView
         android:id="@+id/worldcupphoto"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/basketball"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74"/>
+        android:layout_width="60dp"
+        android:layout_height="0dp"
+        android:src="@drawable/league_logo"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/button"
+        app:layout_constraintStart_toStartOf="@id/button"
+        app:layout_constraintTop_toTopOf="@id/button"/>
 
     <ImageView
         android:id="@+id/arrow"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/baseline_chevron_right_24"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74"/>
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/button"
+        app:layout_constraintEnd_toEndOf="@id/button"
+        app:layout_constraintTop_toTopOf="@id/button"/>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/gamenamerecycler"
+        app:layout_constraintBottom_toBottomOf="@+id/gamenamerecycler"
+        app:layout_constraintStart_toStartOf="@+id/gamenamerecycler"
+        app:layout_constraintEnd_toEndOf="@+id/gamenamerecycler"
+        />
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@+id/gamenamerecycler"
+        app:layout_constraintBottom_toBottomOf="@+id/gamenamerecycler"
+        app:layout_constraintStart_toStartOf="@+id/gamenamerecycler"
+        app:layout_constraintEnd_toEndOf="@+id/gamenamerecycler"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gamenamerecycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.06"/>
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/navmenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1"/>
+        app:layout_constraintVertical_bias="1"
+        app:menu="@menu/navmenu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

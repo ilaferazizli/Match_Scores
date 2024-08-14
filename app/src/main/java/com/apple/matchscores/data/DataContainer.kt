@@ -1,9 +1,9 @@
 package com.apple.matchscores.data
 
-data class Api(
+data class DataContainer(
     val data: List<Data>,
-    val pagination: Pagination,
     val rate_limit: RateLimit,
     val subscription: List<Subscription>,
+    val pagination: Pagination,
     val timezone: String
 )
